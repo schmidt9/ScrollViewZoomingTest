@@ -65,12 +65,6 @@ const NSUInteger kShapesCount = 9;
             label.layer.borderWidth = 2;
             label.layer.borderColor = [UIColor redColor].CGColor;
             
-            UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(label.frame.size.width / 2 - kShapesCenterSize / 2, label.frame.size.height / 2 - kShapesCenterSize / 2, kShapesCenterSize, kShapesCenterSize)];
-            CAShapeLayer *layer = [CAShapeLayer new];
-            layer.fillColor = [UIColor blueColor].CGColor;
-            layer.path = path.CGPath;
-            [label.layer addSublayer:layer];
-            
             [self addSubview:label];
             [_labels addObject:label];
         }
