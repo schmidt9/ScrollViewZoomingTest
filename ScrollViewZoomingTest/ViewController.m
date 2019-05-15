@@ -29,7 +29,7 @@
 {
     [super viewDidAppear:animated];
     
-    [self adjustScrollPositionAndZoom];
+    [self adjustScrollPositionAndZoomToFrame:self.zoomingView.frame];
 }
 
 - (void)viewDidLayoutSubviews
@@ -54,9 +54,8 @@
     self.scrollView.layer.borderWidth = 1;
 }
 
-- (void)adjustScrollPositionAndZoom
+- (void)adjustScrollPositionAndZoomToFrame:(CGRect)frame
 {
-    CGRect frame = self.zoomingView.frame;
     CGFloat viewWidth = frame.size.width;
     CGFloat viewHeight = frame.size.height;
     

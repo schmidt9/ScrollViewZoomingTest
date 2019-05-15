@@ -28,18 +28,22 @@ const NSUInteger kShapesCount = 9;
 
 - (void)drawRect:(CGRect)rect
 {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [[UIColor greenColor] setStroke];
+    CGContextSetLineWidth(context, 1);
+    CGContextStrokeRect(context, [self shapesInnerRect]);
+}
+
+- (CGRect)shapesInnerRect
+{
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
     CGFloat shapesHorizontalSpacing = (width - kShapesSize * 3) / 2;
     CGFloat shapesVerticalSpacing = (height - kShapesSize * 3) / 2;
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // inner rect
-    
-    [[UIColor greenColor] setStroke];
-    CGContextSetLineWidth(context, 1);
-    CGContextStrokeRect(context, CGRectMake(kShapesSize, kShapesSize, shapesHorizontalSpacing * 2 + kShapesSize, shapesVerticalSpacing * 2 + kShapesSize));
+    return CGRectMake(kShapesSize,
+                      kShapesSize,
+                      shapesHorizontalSpacing * 2 + kShapesSize,
+                      shapesVerticalSpacing * 2 + kShapesSize);
 }
 
 - (void)addViews
