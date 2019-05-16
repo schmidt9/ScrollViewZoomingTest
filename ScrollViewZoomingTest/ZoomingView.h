@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZoomingView : UIView
 
+- (CGRect)shapesInnerRect;
+
+- (CGFloat)shapesSize;
+
 - (void)handleZoom:(CGFloat)zoom;
 
 @end

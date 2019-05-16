@@ -14,7 +14,8 @@ const NSUInteger kShapesCount = 9;
 
 @implementation ZoomingView
 {
-    NSMutableArray *_labels;
+    NSMutableArray *_views;
+    CGFloat _zoom;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -32,18 +33,31 @@ const NSUInteger kShapesCount = 9;
     [[UIColor greenColor] setStroke];
     CGContextSetLineWidth(context, 1);
     CGContextStrokeRect(context, [self shapesInnerRect]);
+    CGContextStrokeRect(context, [self shapesOuterRect]);
 }
 
 - (CGRect)shapesInnerRect
 {
-    CGFloat width = self.frame.size.width;
-    CGFloat height = self.frame.size.height;
+    CGFloat width = self.bounds.size.width;
+    CGFloat height = self.bounds.size.height;
     CGFloat shapesHorizontalSpacing = (width - kShapesSize * 3) / 2;
     CGFloat shapesVerticalSpacing = (height - kShapesSize * 3) / 2;
     return CGRectMake(kShapesSize,
                       kShapesSize,
                       shapesHorizontalSpacing * 2 + kShapesSize,
                       shapesVerticalSpacing * 2 + kShapesSize);
+}
+
+- (CGRect)shapesOuterRect
+{
+    CGFloat insetSize = kShapesSize * (1 / _zoom);
+
+    return CGRectInset([self shapesInnerRect], -insetSize, -insetSize);
+}
+
+- (CGFloat)shapesSize
+{
+    return kShapesSize;
 }
 
 - (void)addViews
@@ -56,7 +70,7 @@ const NSUInteger kShapesCount = 9;
     
     // shapes
     
-    _labels = [NSMutableArray new];
+    _views = [NSMutableArray new];
     
     for (int i = 0; i < 3; i++) { // columns
         y = (shapesVerticalSpacing + kShapesSize) * i;
@@ -64,13 +78,12 @@ const NSUInteger kShapesCount = 9;
         for (int j = 0; j < 3; j++) { // rows
             x = (shapesHorizontalSpacing + kShapesSize) * j;
             
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, y, kShapesSize, kShapesSize)];
-            label.textAlignment = NSTextAlignmentCenter;
+            UIView *label = [[UIView alloc] initWithFrame:CGRectMake(x, y, kShapesSize, kShapesSize)];
             label.layer.borderWidth = 2;
             label.layer.borderColor = [UIColor redColor].CGColor;
             
             [self addSubview:label];
-            [_labels addObject:label];
+            [_views addObject:label];
         }
         
     }
@@ -78,6 +91,8 @@ const NSUInteger kShapesCount = 9;
 
 - (void)handleZoom:(CGFloat)zoom
 {
+    _zoom = zoom;
+
     NSArray *anchorPoints = @[[NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)],
                               [NSValue valueWithCGPoint:CGPointMake(0.5, 1.0)],
                               [NSValue valueWithCGPoint:CGPointMake(0.0, 1.0)],
@@ -91,10 +106,12 @@ const NSUInteger kShapesCount = 9;
                               [NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)]
                               ];
     
-    for (UILabel *label in _labels) {
-        [self setViewAnchorPoint:label value:[anchorPoints[[_labels indexOfObject:label]] CGPointValue]];
-        label.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1 / zoom, 1 / zoom);
+    for (UIView *view in _views) {
+        [self setViewAnchorPoint:view value:[anchorPoints[[_views indexOfObject:view]] CGPointValue]];
+        view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1 / zoom, 1 / zoom);
     }
+
+    [self setNeedsDisplay];
 }
 
 /**
