@@ -12,20 +12,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_1e6509872c68aa1b67da9659a6c9fe9acdd81716" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ScrollViewZoomingTest/ViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="48" column="4" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+            <state relative-caret-position="398">
+              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScrollViewZoomingTest/ZoomingView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="81" column="40" lean-forward="true" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+            <state relative-caret-position="1000">
+              <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -35,8 +35,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ScrollViewZoomingTest/ViewController.m" />
         <option value="$PROJECT_DIR$/ScrollViewZoomingTest/ZoomingView.m" />
+        <option value="$PROJECT_DIR$/ScrollViewZoomingTest/ViewController.m" />
       </list>
     </option>
   </component>
@@ -114,13 +114,13 @@
     <frame x="0" y="23" width="1920" height="1014" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49025974" visible="true" weight="0.1373802" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49025974" visible="true" weight="0.13951011" />
       <window_info id="Designer" order="1" />
       <window_info id="Favorites" order="2" sideWeight="0.50974023" side_tool="true" weight="0.1485623" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4983845" weight="0.49242425" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893504" weight="0.23059095" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.47915086" visible="true" weight="0.164859" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.47915086" weight="0.164859" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49893504" weight="0.22294372" />
@@ -142,15 +142,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ScrollViewZoomingTest/ViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="48" column="4" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+        <state relative-caret-position="398">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ScrollViewZoomingTest/ZoomingView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="81" column="40" lean-forward="true" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+        <state relative-caret-position="1000">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
         </state>
       </provider>
     </entry>

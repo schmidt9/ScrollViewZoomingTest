@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGRect)shapesInnerRect;
 
+- (CGRect)shapesOuterRect;
+
 - (CGFloat)shapesSize;
 
 - (void)handleZoom:(CGFloat)zoom;
