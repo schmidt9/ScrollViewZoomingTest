@@ -92,6 +92,19 @@ const NSUInteger kShapesCount = 9;
 - (void)handleZoom:(CGFloat)zoom
 {
     _zoom = zoom;
+    
+//    NSArray *anchorPoints = @[[NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)],
+//                              [NSValue valueWithCGPoint:CGPointMake(0.5, 0.0)],
+//                              [NSValue valueWithCGPoint:CGPointMake(1.0, 0.0)],
+//
+//                              [NSValue valueWithCGPoint:CGPointMake(0.0, 0.5)],
+//                              [NSValue valueWithCGPoint:CGPointMake(0.5, 0.5)],
+//                              [NSValue valueWithCGPoint:CGPointMake(1.0, 0.5)],
+//
+//                              [NSValue valueWithCGPoint:CGPointMake(0.0, 1.0)],
+//                              [NSValue valueWithCGPoint:CGPointMake(0.5, 1.0)],
+//                              [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)]
+//                              ];
 
     NSArray *anchorPoints = @[[NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)],
                               [NSValue valueWithCGPoint:CGPointMake(0.5, 1.0)],

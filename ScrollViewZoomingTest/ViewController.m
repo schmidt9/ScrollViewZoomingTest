@@ -29,17 +29,18 @@
 {
     [super viewDidAppear:animated];
 
-    [self adjustScrollPositionAndZoomToFrame:self.zoomingView.frame];
-
+    [self adjustScrollPositionAndZoomToFrame:[self.zoomingView shapesInnerRect]];
+    // trying different things
     CGFloat shapesSize = [self.zoomingView shapesSize];
     CGFloat shapesScale = 1 / self.scrollView.zoomScale;
     CGFloat newSize = shapesSize / self.scrollView.zoomScale;
     CGFloat sizeDelta = shapesSize - newSize;
     sizeDelta = (shapesSize + sizeDelta) / 2;
-//
+
 //    self.scrollView.zoomScale = 1;
-//
+
 //    [self adjustScrollPositionAndZoomToFrame:CGRectInset(self.zoomingView.frame, sizeDelta, sizeDelta)];
+//    [self adjustScrollPositionAndZoomToFrame:CGRectInset([self.zoomingView shapesInnerRect], sizeDelta / 2, sizeDelta / 2)];
 }
 
 - (void)viewDidLayoutSubviews
